@@ -18,7 +18,7 @@ class ListsContainer extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:3001/api/v1/lists.json')
+		axios.get('https://mysterious-tundra-13244.herokuapp.com/api/v1/lists.json')
 		.then(response => { 
 			console.log(response)
 			this.setState({
@@ -71,6 +71,13 @@ class ListsContainer extends Component {
 	        }))
 	    })
 	    .catch(error => console.log(error));
+	}
+
+	apiEndPoint(){
+		if (process.env.NODE_ENV !== 'production') {
+  			return 'http://localhost:3001/api/v1/lists.json'
+		}
+		return 'https://mysterious-tundra-13244.herokuapp.com/api/v1/lists.json'
 	}
 
 	render() {
