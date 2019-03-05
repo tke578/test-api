@@ -18,7 +18,7 @@ class ListsContainer extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('https://mysterious-tundra-13244.herokuapp.com/api/v1/lists.json')
+		axios.get(this.apiEndPoint())
 		.then(response => { 
 			console.log(response)
 			this.setState({
