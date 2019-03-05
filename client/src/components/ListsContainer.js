@@ -92,7 +92,7 @@ class ListsContainer extends Component {
 	                    />)
 	                }
             	})}
-
+                <NewListForm onNewList={this.addNewList} />
             </div>
 
         )
